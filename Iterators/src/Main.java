@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.LinkedList;
 
 import models.fruits.Banana;
 import models.veggies.Lettuce;
@@ -7,15 +8,6 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		//Objects to add to lists
-		Banana banana = new Banana(1, "Moie River");
-		Banana banana1 = new Banana(2, "Supa Save");
-		Banana banana2 = new Banana(1, "Glen Fisher");
-		Banana banana3 = new Banana(2, "Moie River");
-		
-		Lettuce lettuce = new Lettuce(3, "Supa Save");
-		Lettuce lettuce1 = new Lettuce(1, "Supa Save");
-		Lettuce lettuce2 = new Lettuce(2, "Glen Fisher");
 		
 		
 		//Create iterable list objects.
@@ -25,14 +17,42 @@ public class Main {
 	
 	public class Stock implements Iterable<Banana>
 	{
+		private int index = 0;
+		private LinkedList<Banana> linkedlist = new LinkedList<Banana>();
 		
-		public class Iterator implements iterator<String>
+		public Stock() 
 		{
+			linkedlist.add(new Banana(1, "Moie River"));
+			linkedlist.add(new Banana(1, "Glen Fisher"));
+			linkedlist.add(new Banana(2, "Supa Save"));
+			linkedlist.add(new Banana(2, "Moie River"));
+//			this.index = linkedlist.size();
+		}
+		
+		private class StockIterator implements Iterator<Banana> 
+		{
+
+			@Override
+			public boolean hasNext() 
+			{
+				// TODO Auto-generated method stub
+				return (index < linkedlist.size());
+			}
+
+			@Override
+			public Banana next() 
+			{
+				// TODO Auto-generated method stub
+				Banana banana = linkedlist.get(index);
+				index++;
+				return banana;
+			}
 			
 		}
-
+		
 		@Override
-		public Iterator<String> iterator() {
+		public Iterator<Banana> iterator() 
+		{
 			// TODO Auto-generated method stub
 			return null;
 		}
@@ -41,11 +61,43 @@ public class Main {
 	
 	public class VeggieStock implements Iterable<Lettuce>
 	{
+		private LinkedList<Lettuce> veggies = new LinkedList<Lettuce>();
+		private int index = 0;
+		
+		public VeggieStock() 
+		{
+			veggies.add(new Lettuce(3, "Supa Save"));
+			veggies.add(new Lettuce(1, "Supa Save"));
+			veggies.add(new Lettuce(2, "Glen Fisher"));
+//			this.index = veggies.size();
+		}
+		
+		
+		private class VeggieIterator implements Iterator<Lettuce>
+		{
+
+			@Override
+			public boolean hasNext() 
+			{
+				// TODO Auto-generated method stub
+				return (index < veggies.size());
+			}
+
+			@Override
+			public Lettuce next() 
+			{
+				Lettuce lettuce = veggies.get(index);
+				index++;
+				return lettuce;
+			}
+			
+		}
 
 		@Override
-		public Iterator<Lettuce> iterator() {
+		public Iterator<Lettuce> iterator() 
+		{
 			// TODO Auto-generated method stub
-			return null;
+			return veggies.iterator();
 		}
 		
 	}
