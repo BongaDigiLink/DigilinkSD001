@@ -30,5 +30,4 @@ public class Lettuce {
 		this.store_name = name;
 	}
 	
-	
 }
