@@ -23,34 +23,36 @@
     <div class="container">
       <div class="row">
         <h3>Enter characters to generate password: </h3>
-        <input>
+        <input (input)="onInputCharacters( $any($event.target).value )">
       </div>
 
-      <!--MAke check boxeshere-->
+      <!--Make check box here-->
       <div class="row my-2">
         <div class="col-4">
           <label class="mx-2">Use Letters</label>
-          <input type="checkbox">
+          <input (change)="onChangeUseLetters()" type="checkbox">
         </div>
 
         <div class="col-4">
           <label class="mx-2">Use Numbers</label>
-          <input type="checkbox">
+          <input (change)="onChangeNumbers()" type="checkbox">
         </div>
 
         <div class="col-4">
           <label class="mx-2">Use Symbols</label>
-          <input type="checkbox">
+          <input (change)="onChangeSymbols()" type="checkbox">
         </div>
       </div>
 
       <div class="row">
         <h3>Password: </h3>
-        <input>
+        <input [value]="getPassword()">
       </div>
+      <!--Interpolation--
+      {{ password }}-->
 
       <div class="text-center">
-        <button (click)="onButtonClick" class="btn btn-primary my-2">Make Password</button>
+        <button (click)="onButtonClick()" class="btn btn-primary my-2">Make Password</button>
       </div>
     
     </div>
