@@ -1,7 +1,6 @@
 import java.util.HashMap;
-import java.util.Map;
 
-
+import model.veggies.Lettuce;
 import model.veggies.Veggie;
 
 public class Main 
@@ -18,18 +17,18 @@ public class Main
 	Veggie beans = new Veggie(48,"beans");
 	
 	//Line 20 producing error. revert back !!!
-	//map.put(lettuce, lettuce.getName());
+//	map.put(lettuce, lettuce.getName());
 	
 	
 	//Code along -Code exact as on the udemy tutorial however
 	// still producing error. 
-	 HashMap<Integer, String> hashmap = new HashMap<Integer, String>();
+	 HashMap<Integer, Lettuce> hashmap = new HashMap<Integer, Lettuce>();
+	 hashmap.put(1, new Lettuce(1, "A new name"));
 	 
 //	 hashmap.put(1, "One");
 //	 hashmap.put(3, "three");
 //	 hashmap.put(19, "nineteen");
 //	 hashmap.put(10, "ten");
-//	 
 	
 	//HashMaps are not sorted. Sorting is not reliable.
 	
