@@ -44,7 +44,8 @@
         </div>
       </div>
 
-      <div class="row">
+      <!--# *ngIf="..." Structural derictive, only visible when password is supplied.-->
+      <div class="row" *ngIf="password">
         <h3>Password: </h3>
         <input [value]="getPassword()">
       </div>
