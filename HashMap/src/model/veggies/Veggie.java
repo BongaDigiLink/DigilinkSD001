@@ -2,7 +2,7 @@ package model.veggies;
 
 public class Veggie {
 	private int mass;
-	private String alternative_name;
+	private String productDescription;
 	private String name;
 	
 	public Veggie(int mass, String altname)
@@ -21,9 +21,14 @@ public class Veggie {
 		return this.name;
 	}
 	
-	public String getAltName()
+	public String getProductDescription()
 	{
-		return this.alternative_name;
+		return this.productDescription;
+	}
+	
+	public void setProductDescription(String newDescription)
+	{
+		this.productDescription = newDescription;
 	}
 	
 	public int getMass()
