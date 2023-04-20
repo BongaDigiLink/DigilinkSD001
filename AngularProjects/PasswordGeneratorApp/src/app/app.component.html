@@ -52,7 +52,8 @@
       {{ password }}-->
 
       <div class="text-center">
-        <button (click)="onButtonClick()" class="btn btn-primary my-2">Make Password</button>
+        <button [disabled]="!(length && (includeLetters || includeNumbers || includeSymbols))" 
+        (click)="onButtonClick()" class="btn btn-primary my-2">Make Password</button>
       </div>
     
     </div>
