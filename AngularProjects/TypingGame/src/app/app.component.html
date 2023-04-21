@@ -10,7 +10,8 @@
         <input (input)="onType( $any($event.target).value )" class="input"/>
       </div>
 
-      <div class="box has-text-centered">
+      <div class="box has-text-centered" 
+      *ngIf=" randomSentence === enteredtext ">
         <h1 class="title">Success!</h1>
       </div>
 

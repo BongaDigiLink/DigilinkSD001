@@ -10,9 +10,12 @@ export class AppComponent
 {
   title = 'TypingGame';
   randomSentence = lorem.sentence();
+  enteredtext = "";
 
-  onType(value:string){
+  onType(value:string)
+  {
     //console.log("vaules");
+    this.enteredtext = value;
   }
 
 }
