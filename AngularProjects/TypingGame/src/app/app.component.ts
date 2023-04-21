@@ -18,4 +18,14 @@ export class AppComponent
     this.enteredtext = value;
   }
 
+  compareChars(randomLetter: string, enterLetter:string){
+    if(!enterLetter)
+    {
+      return 'pending';
+    }
+
+    //itenerary function.
+    return randomLetter === enterLetter ? 'correct': 'incorrect';
+  }
+
 }

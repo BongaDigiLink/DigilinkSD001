@@ -5,7 +5,7 @@
       <h1 class="title has-text-centered">Typing Challange Game</h1>
 
       <p class="has-text-centered">
-        <span
+        <span [class]="compareChars(letter, enteredtext[i])"
         *ngFor="let letter of randomSentence.split('');
          let i = index;"
          >{{ letter}}</span>
