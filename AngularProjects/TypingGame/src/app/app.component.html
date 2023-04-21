@@ -4,7 +4,11 @@
 
       <h1 class="title has-text-centered">Typing Challange Game</h1>
 
-      <p class="has-text-centered">{{ randomSentence }}</p>
+      <p class="has-text-centered">
+        <span
+        *ngFor="let letter of randomSentence.split('');
+         let i = index;"
+         >{{ letter}}</span>
 
       <div class="field">
         <input (input)="onType( $any($event.target).value )" class="input"/>
