@@ -4,10 +4,10 @@
 
       <h1 class="title has-text-centered">Typing Challange Game</h1>
 
-      <p class="has-text-centered">Randomly generated text comes here.</p>
+      <p class="has-text-centered">{{ randomSentence }}</p>
 
       <div class="field">
-        <input class="input"/>
+        <input (input)="onType( $any($event.target).value )" class="input"/>
       </div>
 
       <div class="box has-text-centered">
