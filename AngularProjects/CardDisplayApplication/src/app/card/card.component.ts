@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+//Instruct component how to recieve inputs from app.comp
+import { Component , Input} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+  @Input() title = "";
+  @Input() imageUrl = "";
+  @Input() content = "";
+  @Input() username = "";
 
 }
