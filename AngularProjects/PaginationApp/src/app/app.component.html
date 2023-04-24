@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h3 class="my-3"> {{ images[currentPage].title }} </h3>
+  <h3 appClass [backgroundColor]=" 'blue' " class="my-3"> {{ images[currentPage].title }} </h3>
   <img class="img-fluid" [src]="images[currentPage].url">
 
   <div class="text-center">
@@ -51,7 +51,7 @@
 </div>
 
 <div [ngSwitch]="currentPage">
-  
+
   <div *ngSwitch="0">
 
   </div>
