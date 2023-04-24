@@ -1,23 +1,44 @@
 
 <div class="container">
-  <h3> {{ images[currentPage].title }} </h3>
+  <h3 class="my-3"> {{ images[currentPage].title }} </h3>
   <img class="img-fluid" [src]="images[currentPage].url">
 
   <div class="text-center">
     <nav>
       <ul class="pagination my-2">
-    
+        <!--Directive for previous Click button.-->
         <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
           <a (click)=" currentPage = currentPage - 1 " class="page-link">Prev</a>
         </li>
-    
-        <li class="page-item"
-        [ngClass]="{ active: i === currentPage }"
-         *ngFor="let image of images; let i = index;">
-          <a (click)="currentPage = i"  class="page-link">{{ i + 1 }}</a>
-    
-        </li>
-    
+
+        <!-- problem, Affects nav Styling. Solution at line 27-
+          using -> ng-container instead of adding directive inside a div 
+          <div>
+
+        <div *ngFor="let image of images; let i = index"
+          #Directive for the currently displayed image content
+          <li class="page-item"
+          [ngClass]="{ active: i === currentPage }"
+          *ngFor="let image of images; let i = index;">
+
+            <a (click)="currentPage = i"  class="page-link">{{ i + 1 }}</a>
+      
+          </li>
+        </div> -->
+
+        <ng-container *ngFor="let image of images; let i = index">
+
+          <!--Directive for the currently displayed image content-->
+          <li class="page-item"
+          [ngClass]="{ active: i === currentPage }"
+          *ngIf=" i < 5 ">
+          
+            <a (click)="currentPage = i"  class="page-link">{{ i + 1 }}</a>
+      
+          </li>
+        </ng-container>
+
+        <!--Directive for the next btn click-->
         <li class="page-item"
         [ngClass]="{ disabled: currentPage === images.length - 1 }">
           <a (click)=" currentPage = currentPage + 1 " class="page-link">Next</a>
@@ -27,4 +48,16 @@
       </ul>
     </nav>
   </div>
+</div>
+
+<div [ngSwitch]="currentPage">
+  
+  <div *ngSwitch="0">
+
+  </div>
+
+  <div *ngSwitchDefault>
+    Unknown Page
+  </div>
+  
 </div>

@@ -18,6 +18,10 @@ export class AppComponent
   //   }
   // }
 
+  checkWindowIndex(index : number){
+    //return Math.abs( this.currentPage - index) : 5;
+  }
+
   images = 
   [
     {
