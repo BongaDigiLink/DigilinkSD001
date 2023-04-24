@@ -19,11 +19,13 @@ import { Directive, ElementRef, Input } from '@angular/core';
   */
 export class ClassDirective 
 {
-  @Input() backgroundColor: string;
-
   constructor(private element: ElementRef) 
   { 
     //Accessing html element. can be sttyled from here.
-    this.element.nativeElement.style.backgroundColor = this.backgroundColor;
+    //this.element.nativeElement.style.backgroundColor = this.backgroundColor;
+  }
+
+  @Input() set backgroundColor(value: string){
+    this.element.nativeElement.style.backgroundColor = value;
   }
 }
