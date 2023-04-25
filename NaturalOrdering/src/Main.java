@@ -21,7 +21,7 @@ public class Main
 		//call the sort method.
 		Collections.sort(list);
 		
-		System.out.println("Now for a Tree Set.");
+		System.out.println("------------Now for a Tree Set.--------------");
 		
 		//Elements stored in natural order. automatically sorted
 		SortedSet<Person> set = new TreeSet<Person>();
