@@ -29,13 +29,15 @@ public class Person implements Comparable<Person>
 		{
 			return 1;
 		}
-		
-		if(len2 > len1)
+		else if(len2 > len1)
 		{
 			return -1;
 		}
+		else {
+			return name.compareTo(person.name);
+		}
 		
-		return 0;
+		//return 0;
 	}
 
 	@Override
