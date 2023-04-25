@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -16,19 +17,24 @@ public class Main
 		addElements(list);
 		
 		showElements(list);
+		//the person doesnot have a natural order. hence at first it is not possible to 
+		//call the sort method.
+		Collections.sort(list);
 		
 		System.out.println("Now for a Tree Set.");
 		
-		//
+		//Elements stored in natural order. automatically sorted
 		SortedSet<Person> set = new TreeSet<Person>();
+		//Class cast exception: not possible to add elements in a tree set without
+		//first defining a natural order.
 		addElements(set);
 		
 		showElements(set);
-
 	}
 	
 	//In case of uncertainty whether a List or a Set will be parsed into a method,
-	//use the Interface class "Collection"  which is a super interface of both.
+	//use the Interface class "Collection"  which is a super interface of both(list and set).
+	//A collection interface is perfect for only adding and removing.
 	public static void addElements(Collection<Person> col)
 	{
 		col.add(new Person("Mavin"));
